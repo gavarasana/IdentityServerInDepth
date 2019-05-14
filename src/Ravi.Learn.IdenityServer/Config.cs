@@ -19,12 +19,23 @@ namespace Ravi.Learn.IdenityServer
 
         public static IEnumerable<ApiResource> GetApis()
         {
-            return new ApiResource[] { };
+            return new ApiResource[] {
+                new ApiResource("MagazinesApi", "Api to access magazines information")
+            };
         }
 
         public static IEnumerable<Client> GetClients()
         {
-            return new Client[] { };
+            return new Client[] {
+                new Client{
+                    ClientId = "Magazine",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets =  new Secret[] { new Secret("greenTrees".Sha256()) },
+                    AllowedScopes = {"MagazinesApi"}
+                }
+            };
         }
+
+
     }
 }

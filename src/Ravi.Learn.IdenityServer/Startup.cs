@@ -34,7 +34,7 @@ namespace Ravi.Learn.IdenityServer
             }
             else
             {
-                throw new Exception("need to configure key material");
+                throw new Exception("need to configure signing credentials");
             }
         }
 

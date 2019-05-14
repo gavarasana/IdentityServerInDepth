@@ -1,0 +1,73 @@
+2019-05-05 14:20:01.710 -04:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2019-05-05 14:20:01.762 -04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-05-05 14:20:01.783 -04:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-05-05 14:20:01.784 -04:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-05-05 14:20:01.785 -04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-05-05 14:20:01.785 -04:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-05-05 14:20:01.786 -04:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-05-05 14:20:01.786 -04:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-05-05 14:21:25.496 -04:00 [DBG] Login Url: /Account/Login
+2019-05-05 14:21:25.498 -04:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-05-05 14:21:25.499 -04:00 [DBG] Logout Url: /Account/Logout
+2019-05-05 14:21:25.500 -04:00 [DBG] ConsentUrl Url: /consent
+2019-05-05 14:21:25.502 -04:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-05-05 14:21:25.504 -04:00 [DBG] Error Url: /home/error
+2019-05-05 14:21:25.504 -04:00 [DBG] Error Id Parameter: errorId
+2019-05-05 14:22:00.364 -04:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-05-05 14:22:00.370 -04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-05-05 14:22:00.373 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-05-05 14:22:00.378 -04:00 [DBG] Start discovery request
+2019-05-05 14:22:46.494 -04:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-05-05 14:22:46.497 -04:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-05-05 14:22:46.500 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-05-05 14:22:46.506 -04:00 [DBG] Start key discovery request
+2019-05-05 14:32:19.276 -04:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2019-05-05 14:32:19.285 -04:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2019-05-05 14:32:19.287 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2019-05-05 14:32:19.296 -04:00 [DBG] Start authorize request
+2019-05-05 14:32:19.308 -04:00 [DBG] No user present in authorize request
+2019-05-05 14:32:19.314 -04:00 [DBG] Start authorize request protocol validation
+2019-05-05 14:32:19.336 -04:00 [ERR] client_id is missing or too long
+{"ClientId":null,"ClientName":null,"RedirectUri":null,"AllowedRedirectUris":null,"SubjectId":"anonymous","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{},"$type":"AuthorizeRequestValidationLog"}
+2019-05-05 14:32:19.374 -04:00 [ERR] Request validation failed
+2019-05-05 14:32:19.375 -04:00 [INF] {"ClientId":null,"ClientName":null,"RedirectUri":null,"AllowedRedirectUris":null,"SubjectId":"anonymous","ResponseType":null,"ResponseMode":null,"GrantType":null,"RequestedScopes":"","State":null,"UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{},"$type":"AuthorizeRequestValidationLog"}
+2019-05-05 14:32:24.753 -04:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-05-05 14:32:24.782 -04:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-05-05 14:32:24.783 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-05-05 14:32:24.789 -04:00 [WRN] Invalid HTTP request for token endpoint
+2019-05-05 14:32:28.284 -04:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-05-05 14:32:28.286 -04:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-05-05 14:32:28.289 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-05-05 14:32:28.298 -04:00 [DBG] Start userinfo request
+2019-05-05 14:32:28.303 -04:00 [DBG] Bearer token not found
+2019-05-05 14:32:28.303 -04:00 [ERR] No access token found.
+2019-05-05 14:32:31.866 -04:00 [DBG] Request path /connect/endsession matched to endpoint type Endsession
+2019-05-05 14:32:31.869 -04:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionEndpoint
+2019-05-05 14:32:31.872 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionEndpoint for /connect/endsession
+2019-05-05 14:32:31.879 -04:00 [DBG] Processing signout request for anonymous
+2019-05-05 14:32:31.887 -04:00 [DBG] Start end session request validation
+2019-05-05 14:32:31.899 -04:00 [INF] End session request validation success
+{"ClientId":null,"ClientName":null,"SubjectId":"unknown","PostLogOutUri":null,"State":null,"Raw":{},"$type":"EndSessionRequestValidationLog"}
+2019-05-05 14:32:31.900 -04:00 [DBG] Success validating end session request from null
+2019-05-05 14:32:34.698 -04:00 [DBG] Request path /connect/checksession matched to endpoint type Checksession
+2019-05-05 14:32:34.700 -04:00 [DBG] Endpoint enabled: Checksession, successfully created handler: IdentityServer4.Endpoints.CheckSessionEndpoint
+2019-05-05 14:32:34.702 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.CheckSessionEndpoint for /connect/checksession
+2019-05-05 14:32:34.707 -04:00 [DBG] Rendering check session result
+2019-05-05 14:32:37.067 -04:00 [DBG] Request path /connect/revocation matched to endpoint type Revocation
+2019-05-05 14:32:37.074 -04:00 [DBG] Endpoint enabled: Revocation, successfully created handler: IdentityServer4.Endpoints.TokenRevocationEndpoint
+2019-05-05 14:32:37.076 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenRevocationEndpoint for /connect/revocation
+2019-05-05 14:32:37.083 -04:00 [WRN] Invalid HTTP method
+2019-05-05 14:32:39.583 -04:00 [DBG] Request path /connect/introspect matched to endpoint type Introspection
+2019-05-05 14:32:39.586 -04:00 [DBG] Endpoint enabled: Introspection, successfully created handler: IdentityServer4.Endpoints.IntrospectionEndpoint
+2019-05-05 14:32:39.589 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.IntrospectionEndpoint for /connect/introspect
+2019-05-05 14:32:39.593 -04:00 [WRN] Introspection endpoint only supports POST requests
+2019-05-05 14:32:45.285 -04:00 [DBG] Request path /connect/deviceauthorization matched to endpoint type DeviceAuthorization
+2019-05-05 14:32:45.292 -04:00 [DBG] Endpoint enabled: DeviceAuthorization, successfully created handler: IdentityServer4.Endpoints.DeviceAuthorizationEndpoint
+2019-05-05 14:32:45.294 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DeviceAuthorizationEndpoint for /connect/deviceauthorization
+2019-05-05 14:32:45.303 -04:00 [WRN] Invalid HTTP request for device authorize endpoint
+2019-05-05 14:32:45.308 -04:00 [ERR] Device authorization error: invalid_request:invalid_request
+2019-05-05 14:34:43.469 -04:00 [DBG] Request path /connect/deviceauthorization matched to endpoint type DeviceAuthorization
+2019-05-05 14:34:43.471 -04:00 [DBG] Endpoint enabled: DeviceAuthorization, successfully created handler: IdentityServer4.Endpoints.DeviceAuthorizationEndpoint
+2019-05-05 14:34:43.473 -04:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DeviceAuthorizationEndpoint for /connect/deviceauthorization
+2019-05-05 14:34:43.475 -04:00 [WRN] Invalid HTTP request for device authorize endpoint
+2019-05-05 14:34:43.475 -04:00 [ERR] Device authorization error: invalid_request:invalid_request
