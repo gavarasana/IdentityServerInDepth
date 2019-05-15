@@ -1,3 +1,14 @@
 2019-05-05 15:28:52.355 -04:00 [DBG] Retrieving claims from Identity
 2019-05-14 19:56:06.228 -04:00 [INF] Successfully validated the token.
 2019-05-14 19:56:06.382 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 11:51:20.305 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 11:52:58.977 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 15:12:35.725 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 15:14:48.322 -04:00 [INF] Successfully validated the token.
+2019-05-15 15:14:48.392 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 15:18:38.029 -04:00 [INF] Successfully validated the token.
+2019-05-15 15:18:38.099 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 15:39:57.066 -04:00 [INF] Successfully validated the token.
+2019-05-15 15:39:57.127 -04:00 [DBG] Retrieving claims from Identity
+2019-05-15 15:47:31.376 -04:00 [INF] Successfully validated the token.
+2019-05-15 15:47:31.431 -04:00 [DBG] Retrieving claims from Identity

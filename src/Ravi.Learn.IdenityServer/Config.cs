@@ -20,7 +20,8 @@ namespace Ravi.Learn.IdenityServer
         public static IEnumerable<ApiResource> GetApis()
         {
             return new ApiResource[] {
-                new ApiResource("MagazinesApi", "Api to access magazines information")
+                new ApiResource("MagazinesApi", "Api to access magazines information"),
+                new ApiResource( "BooksApi", "Api to access information about books")
             };
         }
 
@@ -31,7 +32,7 @@ namespace Ravi.Learn.IdenityServer
                     ClientId = "Magazine",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets =  new Secret[] { new Secret("greenTrees".Sha256()) },
-                    AllowedScopes = {"MagazinesApi"}
+                    AllowedScopes = {"MagazinesApi", "BooksApi"}
                 }
             };
         }

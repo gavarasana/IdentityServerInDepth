@@ -23,7 +23,7 @@ namespace Ravi.Learn.Magazines
                 .AddJwtBearer(options =>
                 {
                     options.Audience = "MagazinesApi";
-                    options.Authority = "http://localhost:6000";
+                    options.Authority = "http://localhost:50762";
                     options.RequireHttpsMetadata = false;                 
                 });
         }

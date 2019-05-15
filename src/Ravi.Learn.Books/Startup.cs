@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IdentityModel.Tokens;
 using System.Threading.Tasks;
+using IdentityServer3.AccessTokenValidation;
 using Microsoft.Owin;
 using Owin;
 
@@ -7,11 +9,23 @@ using Owin;
 
 namespace Ravi.Learn.Books
 {
-    public partial class Startup
+    public  class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+           
+            JwtSecurityTokenHandler.InboundClaimTypeMap.Clear();
+
+            var bearerOptions = new IdentityServerBearerTokenAuthenticationOptions
+            {
+                Authority = "http://localhost:50762",
+                RequiredScopes = new[] { "BooksApi" },
+                ValidationMode = ValidationMode.Local
+
+            };
+
+            app.UseIdentityServerBearerTokenAuthentication(bearerOptions);
+
         }
     }
 }

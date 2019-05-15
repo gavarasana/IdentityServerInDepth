@@ -8,11 +8,14 @@ namespace Ravi.Learn.Client
 {
     class Program
     {
-        private static string Authority = "http://localhost:6000";
+        private static string Authority = "http://localhost:50762";
         private static string ClientId = "Magazine";
         private static string ClientSecret = "greenTrees";
-        private static string ApiScope = "MagazinesApi";
-        private static string ApiUrl = "https://localhost:5001";
+        private static string ApiScope = "MagazinesApi BooksApi";
+
+        private static string MagazineUrl = "http://localhost:64861";        
+        private static string BookUrl = "http://localhost:56735";
+
 
         private static async  Task Main(string[] args)
         {
@@ -23,7 +26,7 @@ namespace Ravi.Learn.Client
             if (disco.IsError)
             {
                 Console.WriteLine($"Error: {disco.Error}");
-                await Task.CompletedTask;
+                return;
             }
 
             //request token
@@ -38,16 +41,47 @@ namespace Ravi.Learn.Client
             if (tokenResponse.IsError)
             {
                 Console.WriteLine($"Error: {tokenResponse.Error}");
-                await Task.CompletedTask; ;
+                return;
             }
 
             Console.WriteLine($"Token: {tokenResponse.Json}");
 
+            await InvokeMagazines(tokenResponse);
+
+            await InvokeBooks(tokenResponse);
+
+            Console.WriteLine("Press any key...");
+
+            Console.ReadKey();
+
+
+        }
+
+        private static async Task InvokeBooks(TokenResponse tokenResponse)
+        {
             //Call API
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await apiClient.GetAsync($"{ApiUrl}/api/Identity");
+            var response = await apiClient.GetAsync($"{BookUrl}/api/Values");
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Error: {response.StatusCode}-{response.ReasonPhrase}");
+                await Task.CompletedTask; ;
+            }
+
+            var content = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
+            await Task.CompletedTask;
+        }
+
+        private static async Task InvokeMagazines(TokenResponse tokenResponse)
+        {
+            //Call API
+            var apiClient = new HttpClient();
+            apiClient.SetBearerToken(tokenResponse.AccessToken);
+
+            var response = await apiClient.GetAsync($"{MagazineUrl}/api/Identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine($"Error: {response.StatusCode}-{response.ReasonPhrase}");
@@ -57,8 +91,6 @@ namespace Ravi.Learn.Client
             var content = await response.Content.ReadAsStringAsync();
             Console.WriteLine(JArray.Parse(content));
             await Task.CompletedTask;
-
-
         }
     }
 }
