@@ -1,4 +1,5 @@
 ﻿using IdentityModel.Client;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Ravi.Learn.Client
         private static string ApiScope = "MagazinesApi";
         private static string ApiUrl = "https://localhost:5001";
 
-        private static async  void Main(string[] args)
+        private static async  Task Main(string[] args)
         {
 
             var client = new HttpClient();
@@ -22,7 +23,7 @@ namespace Ravi.Learn.Client
             if (disco.IsError)
             {
                 Console.WriteLine($"Error: {disco.Error}");
-                return;
+                await Task.CompletedTask;
             }
 
             //request token
@@ -37,7 +38,7 @@ namespace Ravi.Learn.Client
             if (tokenResponse.IsError)
             {
                 Console.WriteLine($"Error: {tokenResponse.Error}");
-                return;
+                await Task.CompletedTask; ;
             }
 
             Console.WriteLine($"Token: {tokenResponse.Json}");
@@ -46,7 +47,16 @@ namespace Ravi.Learn.Client
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await apiClient.GetAsync($"{ApiUrl}/"
+            var response = await apiClient.GetAsync($"{ApiUrl}/api/Identity");
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Error: {response.StatusCode}-{response.ReasonPhrase}");
+                await Task.CompletedTask; ;
+            }
+
+            var content = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(JArray.Parse(content));
+            await Task.CompletedTask;
 
 
         }

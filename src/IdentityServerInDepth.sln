@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravi.Learn.IdenityServer", "Ravi.Learn.IdenityServer\Ravi.Learn.IdenityServer.csproj", "{E97254E4-D8EA-4710-A7AB-D6C8B210E55E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ravi.Learn.IdenityServer", "Ravi.Learn.IdenityServer\Ravi.Learn.IdenityServer.csproj", "{E97254E4-D8EA-4710-A7AB-D6C8B210E55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravi.Learn.Magazines", "Ravi.Learn.Magazines\Ravi.Learn.Magazines.csproj", "{01F1167A-8ABE-4731-B9C1-EDFCB0C4CDB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ravi.Learn.Magazines", "Ravi.Learn.Magazines\Ravi.Learn.Magazines.csproj", "{01F1167A-8ABE-4731-B9C1-EDFCB0C4CDB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravi.Learn.Client", "Ravi.Learn.Client\Ravi.Learn.Client.csproj", "{B39A3CAD-BB2A-498B-96AA-8BDC4AC84B51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ravi.Learn.Client", "Ravi.Learn.Client\Ravi.Learn.Client.csproj", "{B39A3CAD-BB2A-498B-96AA-8BDC4AC84B51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ravi.Learn.Books", "Ravi.Learn.Books\Ravi.Learn.Books.csproj", "{A85C26A8-B575-41D5-9176-E85FDA2BE046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E97254E4-D8EA-4710-A7AB-D6C8B210E55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +57,23 @@ Global
 		{B39A3CAD-BB2A-498B-96AA-8BDC4AC84B51}.Release|x64.Build.0 = Release|Any CPU
 		{B39A3CAD-BB2A-498B-96AA-8BDC4AC84B51}.Release|x86.ActiveCfg = Release|Any CPU
 		{B39A3CAD-BB2A-498B-96AA-8BDC4AC84B51}.Release|x86.Build.0 = Release|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Debug|x64.Build.0 = Debug|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Debug|x86.Build.0 = Debug|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Release|x64.ActiveCfg = Release|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Release|x64.Build.0 = Release|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Release|x86.ActiveCfg = Release|Any CPU
+		{A85C26A8-B575-41D5-9176-E85FDA2BE046}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55B830B4-7926-4313-885B-67350EC51E1F}
 	EndGlobalSection
 EndGlobal
