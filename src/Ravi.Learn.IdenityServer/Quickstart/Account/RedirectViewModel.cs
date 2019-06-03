@@ -3,7 +3,7 @@
 
 
 
-namespace IdentityServer4.Quickstart.UI
+namespace Ravi.Learn.IdenityServer
 {
     public class RedirectViewModel
     {

@@ -36,7 +36,7 @@ namespace Ravi.Learn.Books
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
-                        c.PrettyPrint();
+                        //c.PrettyPrint();
 
                         // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
                         // In this case, you must provide a lambda that tells Swashbuckle which actions should be
@@ -70,13 +70,11 @@ namespace Ravi.Learn.Books
                         c.OAuth2("oauth2")
                             .Description("OAuth2 Implicit Grant")
                             .Flow("implicit")
-                            .AuthorizationUrl("http://localhost:50762")
+                            .AuthorizationUrl("http://localhost:50762")                            
                             //.TokenUrl("https://tempuri.org/token")
                             .Scopes(scopes =>
                             {
-                                scopes.Add("BooksApi", "To retrieve info on books");
-                                //scopes.Add("read", "Read access to protected resources");
-                                //scopes.Add("write", "Write access to protected resources");
+                                scopes.Add("BooksApi", "Retrieve info for books");
                             });
 
                         // Set this flag to omit descriptions for any actions decorated with the Obsolete attribute

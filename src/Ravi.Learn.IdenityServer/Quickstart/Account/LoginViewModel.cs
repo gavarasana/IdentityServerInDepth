@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IdentityServer4.Quickstart.UI
+namespace Ravi.Learn.IdenityServer
 {
     public class LoginViewModel : LoginInputModel
     {

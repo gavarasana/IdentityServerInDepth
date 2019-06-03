@@ -20,13 +20,64 @@ namespace Ravi.Learn.Client
         private static async  Task Main(string[] args)
         {
 
+            var tokenViaClientCredentialFlow = await GetTokenUsingClientCredentialFlow();
+
+            await InvokeMagazines(tokenViaClientCredentialFlow);
+
+            //await InvokeBooks(tokenViaClientCredentialFlow);
+
+            var tokenViaROFlow = await GetTokenUsingROFlow();
+
+            await InvokeMagazines(tokenViaROFlow);
+
+
+            Console.WriteLine("Press any key...");
+
+            Console.ReadKey();
+
+
+        }
+
+        private static async Task<TokenResponse> GetTokenUsingROFlow()
+        {
+            var client = new HttpClient();
+            var disco = await client.GetDiscoveryDocumentAsync(Authority);
+            if (disco.IsError)
+            {
+                Console.WriteLine($"Error: {disco.Error}");
+                return null;
+            }
+
+            var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
+            {
+                Address = disco.TokenEndpoint,
+                ClientId = "ro.client",
+                ClientSecret = "secret",
+                UserName = "keving",
+                Password = "passw0rd",
+                Scope = "MagazinesApi"
+            });
+
+            if (tokenResponse.IsError)
+            {
+                Console.WriteLine($"Error: {tokenResponse.Error}");
+                return null;
+            }
+
+            Console.WriteLine($"Token: {tokenResponse.Json}");
+            return tokenResponse;
+
+        }
+
+        private static async Task<TokenResponse> GetTokenUsingClientCredentialFlow()
+        {
             var client = new HttpClient();
 
             var disco = await client.GetDiscoveryDocumentAsync(Authority);
             if (disco.IsError)
             {
                 Console.WriteLine($"Error: {disco.Error}");
-                return;
+                return null;
             }
 
             //request token
@@ -41,20 +92,12 @@ namespace Ravi.Learn.Client
             if (tokenResponse.IsError)
             {
                 Console.WriteLine($"Error: {tokenResponse.Error}");
-                return;
+                return null;
             }
 
             Console.WriteLine($"Token: {tokenResponse.Json}");
 
-            await InvokeMagazines(tokenResponse);
-
-            await InvokeBooks(tokenResponse);
-
-            Console.WriteLine("Press any key...");
-
-            Console.ReadKey();
-
-
+            return tokenResponse;
         }
 
         private static async Task InvokeBooks(TokenResponse tokenResponse)
@@ -89,7 +132,11 @@ namespace Ravi.Learn.Client
             }
 
             var content = await response.Content.ReadAsStringAsync();
+
+            Console.WriteLine("===================================================");
             Console.WriteLine(JArray.Parse(content));
+            Console.WriteLine("===================================================");
+
             await Task.CompletedTask;
         }
     }
